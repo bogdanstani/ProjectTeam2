@@ -5,7 +5,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=200)
     email = models.EmailField()
     password = models.CharField(max_length=200)
-    #id = models.AutoField()
+
 
 class Car(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -14,11 +14,10 @@ class Car(models.Model):
     year = models.DateField()
     km = models.IntegerField()
     registry_number = models.CharField(max_length=9)
-    #id = models.AutoField()
+
 
 class Documents(models.Model):
     car = models.ForeignKey(Car, on_delete=models.CASCADE)
-    doc_name = models.CharField(max_length=200)
-    doc_issue_date = models.DateField()
-    doc_expiry_date = models.DateField()
-    #id = models.AutoField()
+    name = models.CharField(max_length=200)
+    issue_date = models.DateField()
+    expiry_date = models.DateField()
