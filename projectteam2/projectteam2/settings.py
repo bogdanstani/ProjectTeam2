@@ -128,3 +128,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = "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"
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False
