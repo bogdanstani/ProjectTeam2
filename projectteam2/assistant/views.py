@@ -5,6 +5,9 @@ from .models import Documents
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 
+def index2(request):
+    return HttpResponse("HTESTTT.")
+
 def get_documents_to_expire(request):
     obj = Documents.objects.get(id=1)
     context = {
