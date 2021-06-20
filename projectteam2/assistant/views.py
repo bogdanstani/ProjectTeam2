@@ -18,3 +18,11 @@ def get_documents_to_expire(request):
         #render(request, "document/detail.html", {})
 
 
+def home(request):
+    return render(request, 'CarAssistant/homepage.html')
+
+
+def sign_up(request):
+    return render(request, 'CarAssistant/signup.html')
+
+
