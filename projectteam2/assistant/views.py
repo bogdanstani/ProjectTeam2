@@ -10,8 +10,9 @@ def index2(request):
 
 def get_documents_to_expire(request):
     obj = Documents.objects.get(id=1)
-    context = {
-        'doc_name': obj.doc_name,
-        'doc_expiry_date': obj.doc_expiry_date
-    }
-    return render(request, "document/detail.html", {})
+#    context = {
+ #       'doc_name': obj.name,
+  #      'doc_expiry_date': obj.expiry_date
+   # }
+    return HttpResponse(obj.name)
+        #render(request, "document/detail.html", {})
