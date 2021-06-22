@@ -1,0 +1,11 @@
+
+{% if latest_question_list %}
+{{ request.user }}
+    <ul>
+    {% for car in all_cars %}
+        <li><a href="/assistant/{{ car.id }}">{{ car.model}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No cars are available.</p>
+{% endif %}

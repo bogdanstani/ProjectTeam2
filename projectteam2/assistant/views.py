@@ -41,12 +41,12 @@ def get_documents_to_expire(request):
             number_of_emails_sent = number_of_emails_sent + 1
 
             corresponding_car = Car.objects.get(pk=doc.car.id)
-            corresponding_user = User.objects.get(pk = corresponding_car.user.id)
+            corresponding_user = User.objects.get(pk=corresponding_car.user.id)
             send_mail(
                 str(doc.name) + ' is about to expire',
                 'We just want to let you know that your '
                 + str(doc.name) + ' will expire soon('
-                + str(time_to_expire) +' days) for '
+                + str(time_to_expire) + ' days) for '
                 + str(corresponding_car.model) + ' '
                 + str(corresponding_car.type)
                 + '. Please consider renewing it.',
@@ -56,3 +56,9 @@ def get_documents_to_expire(request):
             )
 
     return HttpResponse(str(number_of_emails_sent) + " email(s) were sent")
+
+
+#def get_cars(request):
+#    all_cars = Car.objects.all()
+ #   context = {'list of cars': all_cars}
+  #  return render(request, 'CarAssistant/cars.html', context)
